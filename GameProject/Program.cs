@@ -22,6 +22,7 @@ namespace GameProject
                 Console.WriteLine("1-)Oyuncu Ekle\n2-)Oyuncu Sil\n3-)Kullanıcıları Listele\n4-)Oyun Ekle\n5-)Oyun Sil\n6-)Oyunları Listele\n7-)Kampanya Seçiniz\n8-)Çıkış");
                 Console.WriteLine("************************");
                 int choice = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
 
                 if (choice==1)
                 {
@@ -88,12 +89,14 @@ namespace GameProject
                         Console.WriteLine("*******************************");
 
                         int choice2 = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
 
                         if (choice2==1)
                         {
                             gameManager.ListGame();
                             Console.WriteLine("Yukarıdaki oyunlardan öğrencisi kampanyası uygulamak istediğiniz oyunun adını yazınız:");
                             string name = Console.ReadLine();
+                            Console.Clear();
                             ICampaignService campaign = new StudentCampaign();
                             gameManager.GetGame(name, campaign);
                         }
@@ -102,6 +105,7 @@ namespace GameProject
                             gameManager.ListGame();
                             Console.WriteLine("Yukarıdaki oyunlardan kara cuma kampanyası uygulamak istediğiniz oyunun adını yazınız:");
                             string name = Console.ReadLine();
+                            Console.Clear();
                             ICampaignService campaign = new StudentCampaign();
                             gameManager.GetGame(name, campaign);
                         }
