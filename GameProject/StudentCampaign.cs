@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GameProject
 {
-    class StudentCampaign : ICampaign
+    class StudentCampaign : ICampaignService
     {
         public void CalculateSale(Game game)
         {

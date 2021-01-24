@@ -94,7 +94,7 @@ namespace GameProject
                             gameManager.ListGame();
                             Console.WriteLine("Yukarıdaki oyunlardan öğrencisi kampanyası uygulamak istediğiniz oyunun adını yazınız:");
                             string name = Console.ReadLine();
-                            ICampaign campaign = new StudentCampaign();
+                            ICampaignService campaign = new StudentCampaign();
                             gameManager.GetGame(name, campaign);
                         }
                         else if (choice2==2)
@@ -102,7 +102,7 @@ namespace GameProject
                             gameManager.ListGame();
                             Console.WriteLine("Yukarıdaki oyunlardan kara cuma kampanyası uygulamak istediğiniz oyunun adını yazınız:");
                             string name = Console.ReadLine();
-                            ICampaign campaign = new StudentCampaign();
+                            ICampaignService campaign = new StudentCampaign();
                             gameManager.GetGame(name, campaign);
                         }
                         else

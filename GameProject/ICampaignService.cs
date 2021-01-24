@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GameProject
 {
-    interface ICampaign
+    interface ICampaignService
     {
         void CalculateSale(Game game);
         void SaleInformation(Game game);

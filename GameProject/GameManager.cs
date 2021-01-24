@@ -50,7 +50,7 @@ namespace GameProject
             }
         }
 
-        public void GetGame(string GameName,ICampaign campaign)
+        public void GetGame(string GameName,ICampaignService campaign)
         {
             foreach (var game in games)
             {
@@ -66,5 +66,6 @@ namespace GameProject
                 }
             }
         }
+
     }
 }

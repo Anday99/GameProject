@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GameProject
 {
-    class BlackFridayCampaign : ICampaign
+    class BlackFridayCampaign : ICampaignService
     {
         public void CalculateSale(Game game)
         {
@@ -13,7 +13,7 @@ namespace GameProject
 
         public void SaleInformation(Game game)
         {
-            Console.WriteLine("{0} isimli oyuna öğrenci kampanyası uygulandı.\nYeni Fiyat:{1} TL\n", game.GameName, game.GamePrice);
+            Console.WriteLine("{0} isimli oyuna kara cuma kampanyası uygulandı.\nYeni Fiyat:{1} TL\n", game.GameName, game.GamePrice);
         }
     }
 }
