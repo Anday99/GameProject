@@ -8,18 +8,22 @@ namespace GameProject
         static void Main(string[] args)
         {
             Player player1 = new OldPlayer() { TcNo = "1", BirthYear = 1999, PlayerName = "Anday", PlayerSurname = "Aktaş", MembershipYear = 2 };
+            Player player2 = new OldPlayer() { TcNo = "2", BirthYear = 1985, PlayerName = "Engin", PlayerSurname = "Demiroğ", MembershipYear = 20 };
             PlayerManager playerManager = new PlayerManager();
             playerManager.Add(player1);
-     
+            playerManager.Add(player2);
+
             GameManager gameManager = new GameManager();
             gameManager.Add(new Game() { GameName = "Death Stranding", GameType = "Action", GamePrice = 499, GameReleaseYear = 2018, GameReviewScore = 8.3 });
             gameManager.Add(new Game() { GameName = "Days Gone", GameType = "Action,Zombie", GamePrice = 139, GameReleaseYear = 2018, GameReviewScore = 7.3 });
             gameManager.Add(new Game() { GameName = "Persona 5", GameType = "JRPG", GamePrice = 99, GameReleaseYear = 2015, GameReviewScore = 9.1 });
+            gameManager.Add(new Game() { GameName = "Cyberpunk 2077", GameType = "RPG", GamePrice = 499, GameReleaseYear = 2020, GameReviewScore = 7.1 });
+            gameManager.Add(new Game() { GameName = "Witcher 3", GameType = "RPG", GamePrice = 49, GameReleaseYear = 2015, GameReviewScore = 9.3 });
 
             while (true)
             {
                 Console.WriteLine("**********MENU**********");
-                Console.WriteLine("1-)Oyuncu Ekle\n2-)Oyuncu Sil\n3-)Kullanıcıları Listele\n4-)Oyun Ekle\n5-)Oyun Sil\n6-)Oyunları Listele\n7-)Kampanya Seçiniz\n8-)Çıkış");
+                Console.WriteLine("1-)Oyuncu Ekle\n2-)Oyuncu Sil\n3-)Kullanıcıları Listele\n4-)Oyun Ekle\n5-)Oyun Sil\n6-)Oyunları Listele\n7-)Oyunları İnceleme Puanına Göre Listele\n8-)Kampanya Seçiniz\n9-)Çıkış");
                 Console.WriteLine("************************");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
@@ -81,6 +85,11 @@ namespace GameProject
                 }
 
                 else if (choice==7)
+                {
+                    gameManager.SortByReviewScores();
+                } 
+
+                else if (choice==8)
                 {
                     while (true)
                     {

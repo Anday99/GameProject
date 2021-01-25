@@ -26,7 +26,7 @@ namespace GameProject
                 if (game.GameName == GameName)
                 {
                     games.Remove(game);
-                    Console.WriteLine("{0} , isimli oyuncu sistemden silindi.", game.GameName);
+                    Console.WriteLine("{0} , isimli oyun sistemden silindi.", game.GameName);
                     break;
                 }
 
@@ -65,6 +65,38 @@ namespace GameProject
                     continue;
                 }
             }
+        }
+
+        public void SortByReviewScores()
+        {
+            List<Game> temp = new List<Game>() { };
+            temp.Add(new Game(){});
+
+            for (int i = 0; i < games.Count; i++)
+            {
+                for (int j = i; j < games.Count; j++)
+                {
+                    if (games[i].GameReviewScore<games[j].GameReviewScore)
+                    {
+                        temp[0] = games[i];
+                        games[i] = games[j];
+                        games[j] = temp[0];
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+
+            Console.WriteLine("---------------------");
+            int a = 1;
+            foreach (var game1 in games)
+            {
+                Console.WriteLine($"{a}.{game1.GameName.PadRight(20,' ')}({game1.GameReviewScore})");
+                a += 1;
+            }
+            Console.WriteLine("---------------------");
         }
 
     }
