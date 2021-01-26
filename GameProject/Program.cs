@@ -24,7 +24,7 @@ namespace GameProject
             while (true)
             {
                 Console.WriteLine("**********MENU**********");
-                Console.WriteLine("1-)Oyuncu Ekle\n2-)Oyuncu Sil\n3-)Kullanıcıları Listele\n4-)Oyun Ekle\n5-)Oyun Sil\n6-)Oyunları Listele\n7-)Oyunları İnceleme Puanına Göre Listele\n8-)Kampanya Seçiniz\n9-)Çıkış");
+                Console.WriteLine("1-)Oyuncu Ekle\n2-)Oyuncu Sil\n3-)Kullanıcıları Listele\n4-)Oyun Ekle\n5-)Oyun Sil\n6-)Oyunları Listele\n7-)Oyunları İnceleme Puanına Göre Listele\n8-)Oyunları Çıkış Yıllarına Göre Sırala\n9-)Kampanya Seçiniz\n10-)Çıkış");
                 Console.WriteLine("************************");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
@@ -76,7 +76,7 @@ namespace GameProject
 
                 else if (choice==5)
                 {
-                    Console.WriteLine("Silmek istediğiniz oyuncunun Adını giriniz:");
+                    Console.WriteLine("Silmek istediğiniz oyunun Adını giriniz:");
                     gameManager.Delete(Console.ReadLine());
                 }
 
@@ -88,9 +88,12 @@ namespace GameProject
                 else if (choice==7)
                 {
                     gameManager.SortByReviewScores();
-                } 
-
-                else if (choice==8)
+                }
+                else if (choice == 8)
+                {
+                    gameManager.SortByReleaseYear();
+                }
+                else if (choice==9)
                 {
                     while (true)
                     {

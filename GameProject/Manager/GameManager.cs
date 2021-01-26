@@ -99,5 +99,36 @@ namespace GameProject
             Console.WriteLine("---------------------");
         }
 
+        public void SortByReleaseYear()
+        {
+            List<Game> temp2 = new List<Game>() { };
+            temp2.Add(new Game() { });
+
+            for (int i = 0; i < games.Count; i++)
+            {
+                for (int j = i; j < games.Count; j++)
+                {
+                    if (games[i].GameReleaseYear < games[j].GameReleaseYear)
+                    {
+                        temp2[0] = games[i];
+                        games[i] = games[j];
+                        games[j] = temp2[0];
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+
+            Console.WriteLine("---------------------");
+            int b = 1;
+            foreach (var game1 in games)
+            {
+                Console.WriteLine($"{b}.{game1.GameName.PadRight(20, ' ')}({game1.GameReleaseYear})");
+                b += 1;
+            }
+            Console.WriteLine("---------------------");
+        }
     }
 }
