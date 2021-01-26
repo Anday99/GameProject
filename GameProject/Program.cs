@@ -116,7 +116,7 @@ namespace GameProject
                             Console.WriteLine("Yukarıdaki oyunlardan kara cuma kampanyası uygulamak istediğiniz oyunun adını yazınız:");
                             string name = Console.ReadLine();
                             Console.Clear();
-                            ICampaignService campaign = new StudentCampaign();
+                            ICampaignService campaign = new BlackFridayCampaign();
                             gameManager.GetGame(name, campaign);
                         }
                         else
