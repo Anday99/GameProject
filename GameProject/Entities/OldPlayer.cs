@@ -1,11 +1,16 @@
-﻿using System;
+﻿using GameProject.Interface;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GameProject
 {
-    class OldPlayer:Player
+    class OldPlayer : IPlayer
     {
         public int MembershipYear { get; set; }
+        public string PlayerName { get; set; }
+        public string PlayerSurname { get; set; }
+        public string TcNo { get; set; }
+        public int BirthYear { get; set; }
     }
 }

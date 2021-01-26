@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameProject.Interface;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,14 +7,14 @@ namespace GameProject
 {
     class PlayerManager
     {
-        List<Player> players = new List<Player>() { };
-        public void Add(Player player)
+        List<IPlayer> players = new List<IPlayer>() { };
+        public void Add(IPlayer player)
         {
             players.Add(player);
             Console.WriteLine("{0} {1}, isimli oyuncu sisteme eklendi.",player.PlayerName,player.PlayerSurname);
         }
 
-        public void Update(Player player,int Id)
+        public void Update(IPlayer player,int Id)
         {
 
         }

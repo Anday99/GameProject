@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameProject.Interface;
+using System;
 using System.Collections.Generic;
 
 namespace GameProject
@@ -7,8 +8,8 @@ namespace GameProject
     {
         static void Main(string[] args)
         {
-            Player player1 = new OldPlayer() { TcNo = "1", BirthYear = 1999, PlayerName = "Anday", PlayerSurname = "Aktaş", MembershipYear = 2 };
-            Player player2 = new OldPlayer() { TcNo = "2", BirthYear = 1985, PlayerName = "Engin", PlayerSurname = "Demiroğ", MembershipYear = 20 };
+            IPlayer player1 = new OldPlayer() { TcNo = "1", BirthYear = 1999, PlayerName = "Anday", PlayerSurname = "Aktaş", MembershipYear = 2 };
+            IPlayer player2 = new OldPlayer() { TcNo = "2", BirthYear = 1985, PlayerName = "Engin", PlayerSurname = "Demiroğ", MembershipYear = 20 };
             PlayerManager playerManager = new PlayerManager();
             playerManager.Add(player1);
             playerManager.Add(player2);
