@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GameProject
 {
-    class NewPlayer: IPlayer
+    public class NewPlayer: IPlayer
     {
         public int UndertakingYear { get; set; }
         public string PlayerName { get; set; }

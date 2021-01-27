@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GameProject.Interface
 {
-    interface IPlayer
+    public interface IPlayer
     {
         public string PlayerName { get; set; }
         public string PlayerSurname { get; set; }
