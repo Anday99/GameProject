@@ -28,105 +28,106 @@ namespace GameProject
                 Console.WriteLine("************************");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
-
-                if (choice==1)
+                if (choice==1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7 || choice == 8 || choice == 9)
                 {
-                    Console.WriteLine("Eklemek istediğiniz kullanıcı bilgilerini giriniz");
-                    Console.WriteLine("Tc no:");
-                    string TcNo = Console.ReadLine();
-                    Console.WriteLine("Ad:");
-                    string PlayerName = Console.ReadLine();
-                    Console.WriteLine("Soyad:");
-                    string PlayerSurname = Console.ReadLine();
-                    Console.WriteLine("Doğum Yılı:");
-                    int BirthYear = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Kaç yıl kullanmayı taahhüt ediyorsunuz:");
-                    int UndertakingYear = Convert.ToInt32(Console.ReadLine());
-
-                    playerManager.Add(new NewPlayer() {TcNo=TcNo,PlayerName=PlayerName,PlayerSurname=PlayerSurname,BirthYear=BirthYear,UndertakingYear= UndertakingYear });
-                }
-
-                else if (choice==2)
-                {
-                    Console.WriteLine("Silmek istediğiniz oyuncunun Tc Numarasını giriniz:");
-                    playerManager.Delete(Console.ReadLine());
-                }
-
-                else if (choice==3)
-                {
-                    playerManager.ListPlayer();
-                }
-
-                else if (choice==4)
-                {
-                    Console.WriteLine("Eklemek istediğiniz oyunun bilgilerini giriniz");
-                    Console.WriteLine("Oyun Adı:");
-                    string GameName = Console.ReadLine();
-                    Console.WriteLine("Oyunun Çıkış Yılı:");
-                    int GameReleaseYear = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Oyunun Türü:");
-                    string GameType = Console.ReadLine();
-                    Console.WriteLine("Oyunun Fiyatı:");
-                    double GamePrice = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Oyunun İnceleme Puanı:");
-                    double GameReviewScore = Convert.ToDouble(Console.ReadLine());
-
-                    gameManager.Add(new Game() { GameName = GameName, GameReleaseYear = GameReleaseYear, GameType = GameType, GamePrice = GamePrice, GameReviewScore = GameReviewScore });
-                }
-
-                else if (choice==5)
-                {
-                    Console.WriteLine("Silmek istediğiniz oyunun Adını giriniz:");
-                    gameManager.Delete(Console.ReadLine());
-                }
-
-                else if (choice==6)
-                {
-                    gameManager.ListGame();
-                }
-
-                else if (choice==7)
-                {
-                    gameManager.SortByReviewScores();
-                }
-                else if (choice == 8)
-                {
-                    gameManager.SortByReleaseYear();
-                }
-                else if (choice==9)
-                {
-                    while (true)
+                    switch (choice)
                     {
-                        Console.WriteLine("**********KAMPANYALAR**********");
-                        Console.WriteLine("-1-Öğrenci Kampanyası\n-2-Kara Cuma Kampanyası\n-3-Ana Menüye Dön");
-                        Console.WriteLine("*******************************");
+                        case 1:
+                            Console.WriteLine("Eklemek istediğiniz kullanıcı bilgilerini giriniz");
+                            Console.WriteLine("Tc no:");
+                            string TcNo = Console.ReadLine();
+                            Console.WriteLine("Ad:");
+                            string PlayerName = Console.ReadLine();
+                            Console.WriteLine("Soyad:");
+                            string PlayerSurname = Console.ReadLine();
+                            Console.WriteLine("Doğum Yılı:");
+                            int BirthYear = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Kaç yıl kullanmayı taahhüt ediyorsunuz:");
+                            int UndertakingYear = Convert.ToInt32(Console.ReadLine());
 
-                        int choice2 = Convert.ToInt32(Console.ReadLine());
-                        Console.Clear();
-
-                        if (choice2==1)
-                        {
-                            gameManager.ListGame();
-                            Console.WriteLine("Yukarıdaki oyunlardan öğrencisi kampanyası uygulamak istediğiniz oyunun adını yazınız:");
-                            string name = Console.ReadLine();
-                            Console.Clear();
-                            ICampaignService campaign = new StudentCampaign();
-                            gameManager.GetGame(name, campaign);
-                        }
-                        else if (choice2==2)
-                        {
-                            gameManager.ListGame();
-                            Console.WriteLine("Yukarıdaki oyunlardan kara cuma kampanyası uygulamak istediğiniz oyunun adını yazınız:");
-                            string name = Console.ReadLine();
-                            Console.Clear();
-                            ICampaignService campaign = new BlackFridayCampaign();
-                            gameManager.GetGame(name, campaign);
-                        }
-                        else
-                        {
+                            playerManager.Add(new NewPlayer() { TcNo = TcNo, PlayerName = PlayerName, PlayerSurname = PlayerSurname, BirthYear = BirthYear, UndertakingYear = UndertakingYear });
                             break;
-                        }
+                        case 2:
+                            Console.WriteLine("Silmek istediğiniz oyuncunun Tc Numarasını giriniz:");
+                            playerManager.Delete(Console.ReadLine());
+                            break;
+                        case 3:
+                            playerManager.ListPlayer();
+                            break;
+                        case 4:
+                            Console.WriteLine("Eklemek istediğiniz oyunun bilgilerini giriniz");
+                            Console.WriteLine("Oyun Adı:");
+                            string GameName = Console.ReadLine();
+                            Console.WriteLine("Oyunun Çıkış Yılı:");
+                            int GameReleaseYear = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Oyunun Türü:");
+                            string GameType = Console.ReadLine();
+                            Console.WriteLine("Oyunun Fiyatı:");
+                            double GamePrice = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Oyunun İnceleme Puanı:");
+                            double GameReviewScore = Convert.ToDouble(Console.ReadLine());
+
+                            gameManager.Add(new Game() { GameName = GameName, GameReleaseYear = GameReleaseYear, GameType = GameType, GamePrice = GamePrice, GameReviewScore = GameReviewScore });
+                            break;
+                        case 5:
+                            Console.WriteLine("Silmek istediğiniz oyunun Adını giriniz:");
+                            gameManager.Delete(Console.ReadLine());
+                            break;
+                        case 6:
+                            gameManager.ListGame();
+                            break;
+                        case 7:
+                            gameManager.SortByReviewScores();
+                            break;
+                        case 8:
+                            gameManager.SortByReleaseYear();
+                            break;
+                        case 9:
+                            while (true)
+                            {
+                                Console.WriteLine("**********KAMPANYALAR**********");
+                                Console.WriteLine("-1-Öğrenci Kampanyası\n-2-Kara Cuma Kampanyası\n-3-Ana Menüye Dön");
+                                Console.WriteLine("*******************************");
+
+                                int choice2 = Convert.ToInt32(Console.ReadLine());
+                                Console.Clear();
+
+                                if (choice2 == 1 || choice2 == 2)
+                                {
+                                    switch (choice2)
+                                    {
+                                        case 1:
+                                            gameManager.ListGame();
+                                            Console.WriteLine("Yukarıdaki oyunlardan öğrencisi kampanyası uygulamak istediğiniz oyunun adını yazınız:");
+                                            string nameStudentCampaign = Console.ReadLine();
+                                            Console.Clear();
+                                            ICampaignService campaignStudent = new StudentCampaign();
+                                            gameManager.GetGame(nameStudentCampaign, campaignStudent);
+                                            break;
+                                        case 2:
+                                            gameManager.ListGame();
+                                            Console.WriteLine("Yukarıdaki oyunlardan kara cuma kampanyası uygulamak istediğiniz oyunun adını yazınız:");
+                                            string nameBlackFridayCampaign = Console.ReadLine();
+                                            Console.Clear();
+                                            ICampaignService campaignBlackFriday = new BlackFridayCampaign();
+                                            gameManager.GetGame(nameBlackFridayCampaign, campaignBlackFriday);
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                            break;
+
+                        default:
+                            break;
                     }
+                
                 }
                 else
                 {
