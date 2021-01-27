@@ -19,7 +19,7 @@ namespace GameProject
             gameManager.Add(new Game() { GameName = "Days Gone", GameType = "Action,Zombie", GamePrice = 139, GameReleaseYear = 2018, GameReviewScore = 7.3 });
             gameManager.Add(new Game() { GameName = "Persona 5", GameType = "JRPG", GamePrice = 99, GameReleaseYear = 2015, GameReviewScore = 9.1 });
             gameManager.Add(new Game() { GameName = "Cyberpunk 2077", GameType = "RPG", GamePrice = 499, GameReleaseYear = 2020, GameReviewScore = 7.1 });
-            gameManager.Add(new Game() { GameName = "Witcher 3", GameType = "RPG", GamePrice = 49, GameReleaseYear = 2015, GameReviewScore = 9.3 });
+            gameManager.Add(new Game() { GameName = "Witcher 3", GameType = "RPG", GamePrice = 59, GameReleaseYear = 2015, GameReviewScore = 9.3 });
 
             while (true)
             {
